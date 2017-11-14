@@ -1,0 +1,10 @@
+<launch>
+	<!-- parse xacro file of robot description -->
+	<param name="robot_name"
+		command="$(find xacro)/xacro --inorder '$(find my_robot_description)/urdf/example.urdf.xacro'"
+		/>
+
+	<!-- start rviz to see the structure of urdf. just use the launch file from urdf tutorial -->
+	<include file="$(find urdf_tutorial)/launch/display.launch"/>
+
+</launch>
