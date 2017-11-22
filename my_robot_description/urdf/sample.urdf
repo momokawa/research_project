@@ -17,12 +17,12 @@
     <parent link="base_link"/>
     <child link="sample_robot_mounting_link"/>
   </joint>
-  <joint name="mounting_bracket_a_joint" type="fixed">
+  <joint name="bracket_0_1_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0 0"/>
     <parent link="sample_robot_mounting_link"/>
-    <child link="mounting_bracket_a_link"/>
+    <child link="bracket_1_link"/>
   </joint>
-  <link name="mounting_bracket_a_link">
+  <link name="bracket_1_link">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0.0255"/>
       <geometry>
@@ -32,47 +32,90 @@
     <!-- FIXME add collision and inetia -->
   </link>
   <!-- FIXME add llimit ulimit vlimit -->
-  <joint name="mounting_bracket_b_joint" type="continuous">
+  <joint name="bracket_1_2_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0.051"/>
     <axis xyz="0 0 1"/>
-    <parent link="mounting_bracket_a_link"/>
-    <child link="mounting_bracket_b_link"/>
+    <parent link="bracket_1_link"/>
+    <child link="bracket_2_link"/>
   </joint>
-  <link name="mounting_bracket_b_link">
+  <link name="bracket_2_link">
     <visual>
       <!-- FIXME change this to stl -->
-      <origin rpy="0 0 0" xyz="0 0 0.0255"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.051" radius="0.056"/>
+        <box size="0.065 0.075 0.160"/>
       </geometry>
       <!-- add collision and inertial -->
     </visual>
   </link>
-  <joint name="motor_cover_1_a_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 0.051"/>
-    <parent link="mounting_bracket_b_link"/>
-    <child link="motor_cover_1_a_link"/>
+  <!-- FIXME add limit and ulimit vilimit -->
+  <joint name="brackt_2_3_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0.1125"/>
+    <parent link="bracket_2_link"/>
+    <child link="bracket_3_link"/>
   </joint>
-  <link name="motor_cover_1_a_link">
-    <!-- FIXME add inertial and collision -->
+  <link name="bracket_3_link">
     <visual>
-      <origin rpy="0 0 0" xyz="0.0325 0 0.0545"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.065 0.075 0.109"/>
+        <box size="0.064 0.075 0.154"/>
       </geometry>
     </visual>
   </link>
-  <!-- FIXME add limit and ulimit vilimit-->
-  <joint name="motor_cover_1_b_joint" type="continuous">
-    <origin rpy="0 0 0" xyz="0 0 0.0615"/>
-    <parent link="motor_cover_1_a_link"/>
-    <child link="motor_cover_1_b_link"/>
+  <!-- add color and limis -->
+  <joint name="bracket_3_4_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0.1065"/>
+    <axis xyz="0 0 1"/>
+    <parent link="bracket_3_link"/>
+    <child link="bracket_4_link"/>
   </joint>
-  <link name="motor_cover_1_b_link">
+  <link name="bracket_4_link">
+    <!-- add collision -->
     <visual>
-      <origin rpy="0 0 0" xyz="-0.032 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.022"/>
       <geometry>
-        <box size="0.064 0.075 0.109"/>
+        <cylinder length="0.044" radius="0.0475"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="bracket_4_5_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0.1055"/>
+    <parent link="bracket_4_link"/>
+    <child link="bracket_5_link"/>
+  </joint>
+  <link name="bracket_5_link">
+    <!-- add collision and so on -->
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.032 0 0.0365"/>
+      <geometry>
+        <box size="0.064 0.093 0.196"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="bracket_5_6_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0.098"/>
+    <parent link="bracket_5_link"/>
+    <child link="bracket_6_link"/>
+  </joint>
+  <link name="bracket_6_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.051 0.093 0.138"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="end_effector_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0.0915"/>
+    <axis xyz="0 0 1"/>
+    <parent link="bracket_6_link"/>
+    <child link="end_effector_link"/>
+  </joint>
+  <link name="end_effector_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.093 0.093 0.031"/>
       </geometry>
     </visual>
   </link>

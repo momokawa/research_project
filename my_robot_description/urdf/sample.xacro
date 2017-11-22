@@ -14,25 +14,41 @@
       <child link="sample_robot_mounting_link" />
     </joint>
 
-    <!-- 2. moutning_bracket link and joint -->
-    <mounting_bracket_a  parent="sample_robot_mounting_link">
+    <!-- bracket_1 -->
+    <bracket_1  parent="sample_robot_mounting_link">
       <origin xyz="0 0 0" rpy="0 0 0" />
-    </mounting_bracket_a>
-
-    <mounting_bracket_b parent="mounting_bracket_a_link">
+    </bracket_1>
+    
+    <!-- bracket_2 -->
+    <bracket_2 parent="bracket_1_link">
       <origin xyz="0 0 0.051" rpy="0 0 0" />
-    </mounting_bracket_b>
+    </bracket_2>
 
-    <!-- 3. motor_cover_1 link and joint "fixed" --> <!-- FIXME maybe here would be deleted if I can make all-in-one parts -->
-    <motor_cover_1_a parent="mounting_bracket_b_link">
-     <origin xyz="0 0 0.051" rpy="0 0 0" /> <!-- fixed to mounting_bracket pats. this part is temporary one -->
-      <!-- FIXME this origin is same with mounting_bracke_b_joint -->
-    </motor_cover_1_a>
+    <!-- bracket_3 -->
+    <bracket_3 parent="bracket_2_link">
+      <origin xyz="0 0 0.1125" rpy="0 0 0" />
+    </bracket_3>
 
-    <!-- 4. motor_cover_1 link and joint "continuous" -->
-    <motor_cover_1_b parent="motor_cover_1_a_link">
-      <origin xyz="0 0 0.0615" rpy="0 0 0" />
-    </motor_cover_1_b>
+    <!-- bracket_4 -->
+    <bracket_4 parent="bracket_3_link">
+      <origin xyz="0 0 0.1065" rpy="0 0 0" />
+    </bracket_4>
+
+    <!-- bracket_5 -->
+    <bracket_5 parent="bracket_4_link">
+      <origin xyz="0 0 0.1055" rpy="0 0 0" />
+    </bracket_5>
+
+    <!-- bracket_6 -->
+    <bracket_6 parent="bracket_5_link">
+      <origin xyz="0 0 0.098" rpy="0 0 0" />
+    </bracket_6>
+
+    <!-- 7 end_effector -->
+    <end_effector parent="bracket_6_link">
+      <origin xyz="0 0 0.0915" rpy="0 0 0" />
+    </end_effector>
   </xacro:macro>
+  
 
 </robot>
