@@ -1,2 +1,14 @@
-<!-- Top of urdf -->
-
+<?xml version="1.0"?>
+<!-- top of urdf -->
+<robot 
+	name = "sample_robot"
+	xmlns:xacro="http://ros.org/wiki/xacro">
+	<!-- generate sample_robot from macro -->
+	<xacro:include filename="$(find my_robot_description)/urdf/sample.xacro" />
+  
+  <!-- link to provide the location reference for the arm -->
+  <link name="base_link" />
+  <sample_robot parent="base_link">
+    <origin xyz="0 0 0" />
+  </sample_robot> 
+</robot>

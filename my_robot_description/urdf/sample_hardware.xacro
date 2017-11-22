@@ -1,1 +1,85 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
 <!-- defined num and set of link and joint -->
+<!-- lowest level of xacro -->
+
+<!-- valiables to be used -->
+
+<!-- FIXME add color -->
+<!-- mounting bracket -->
+  <xacro:macro name="mounting_bracket_a" params="parent *origin">
+    <joint name="mounting_bracket_a_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}" />
+      <child link="mounting_bracket_a_link" />
+    </joint>
+    <link name="mounting_bracket_a_link">
+      <visual>
+        <origin xyz="0 0 ${0.051/2}" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="${0.112/2}" length="0.051" />
+        </geometry>
+      </visual>
+      <!-- FIXME add collision and inetia -->
+    </link>
+  </xacro:macro>
+
+<!-- mounting_bracket_b: revoluting joint -->
+  <xacro:macro name="mounting_bracket_b" params="parent *origin"> <!-- FIXME add llimit ulimit vlimit -->
+    <joint name="mounting_bracket_b_joint" type="continuous">
+      <xacro:insert_block name="origin"/>
+      <axis xyz="0 0 1" />
+      <parent link="${parent}" />
+      <child link="mounting_bracket_b_link"/>
+
+    </joint>
+
+    <link name="mounting_bracket_b_link">
+      <visual> <!-- FIXME change this to stl -->
+        <origin xyz="0 0 ${0.051/2}" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="${0.112/2}" length="0.051" />
+        </geometry>
+        <!-- add collision and inertial -->
+      </visual>
+    </link>
+  </xacro:macro>
+
+<!-- motor_cover_1_a -->
+  <xacro:macro name="motor_cover_1_a" params="parent *origin">
+    <joint name="motor_cover_1_a_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}" />
+      <child link="motor_cover_1_a_link" />
+    </joint>
+
+    <link name="motor_cover_1_a_link">
+      <!-- FIXME add inertial and collision -->
+      <visual>
+        <origin xyz="${0.065/2} 0 ${0.109/2}" rpy="0 0 0" />
+        <geometry>
+          <box size="0.065 ${37.5*2/1000} 0.109" />
+        </geometry> 
+      </visual>
+    </link>
+  </xacro:macro>
+
+<!-- motor_cover_1_b -->
+  <xacro:macro name="motor_cover_1_b" params="parent *origin">
+    <!-- FIXME add limit and ulimit vilimit-->
+    <joint name="motor_cover_1_b_joint" type="continuous">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}" />
+      <child link="motor_cover_1_b_link" />
+    </joint>
+
+    <link name="motor_cover_1_b_link">
+      <visual>
+        <origin xyz="-${0.064/2} 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.064 ${37.5*2/1000} 0.109" />
+        </geometry>
+      </visual>
+    </link>
+  </xacro:macro>
+</robot>

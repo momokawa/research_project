@@ -1,1 +1,38 @@
-<!-- Second top xacro -->
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- second top urdf -->
+  <!-- include other file -->
+  <xacro:include filename="$(find my_robot_description)/urdf/sample_hardware.xacro" />  
+
+  <!-- sample_robot description -->
+  <xacro:macro name="sample_robot" params="parent *origin">
+    <!-- 1. the first top link and joint -->
+    <link name="sample_robot_mounting_link"/>
+    <joint name="sample_robot_mounting_joint" type="fixed">
+      <xacro:insert_block name="origin" />
+      <parent link="${parent}" />
+      <child link="sample_robot_mounting_link" />
+    </joint>
+
+    <!-- 2. moutning_bracket link and joint -->
+    <mounting_bracket_a  parent="sample_robot_mounting_link">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+    </mounting_bracket_a>
+
+    <mounting_bracket_b parent="mounting_bracket_a_link">
+      <origin xyz="0 0 0.051" rpy="0 0 0" />
+    </mounting_bracket_b>
+
+    <!-- 3. motor_cover_1 link and joint "fixed" --> <!-- FIXME maybe here would be deleted if I can make all-in-one parts -->
+    <motor_cover_1_a parent="mounting_bracket_b_link">
+     <origin xyz="0 0 0.051" rpy="0 0 0" /> <!-- fixed to mounting_bracket pats. this part is temporary one -->
+      <!-- FIXME this origin is same with mounting_bracke_b_joint -->
+    </motor_cover_1_a>
+
+    <!-- 4. motor_cover_1 link and joint "continuous" -->
+    <motor_cover_1_b parent="motor_cover_1_a_link">
+      <origin xyz="0 0 0.0615" rpy="0 0 0" />
+    </motor_cover_1_b>
+  </xacro:macro>
+
+</robot>
