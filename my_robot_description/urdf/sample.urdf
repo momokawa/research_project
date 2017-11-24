@@ -11,6 +11,7 @@
   <material name="black">
     <color rgba="0.2 0.2 0.2 1.0"/>
   </material>
+  <!-- TODO add end effector -->
   <!-- link to provide the location reference for the arm -->
   <link name="base_link"/>
   <!-- 1. the first top link and joint -->
@@ -117,13 +118,13 @@
       </geometry>
     </visual>
   </link>
-  <joint name="end_effector_joint" type="continuous">
+  <joint name="bracket_7_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0.0915"/>
     <axis xyz="0 0 1"/>
     <parent link="bracket_6_link"/>
-    <child link="end_effector_link"/>
+    <child link="bracket_7_link"/>
   </joint>
-  <link name="end_effector_link">
+  <link name="bracket_7_link">
     <visual>
       <origin rpy="0 1.57079632679 0" xyz="0 0 0"/>
       <!-- need to rotate model -->
@@ -133,5 +134,6 @@
       <material name="black"/>
     </visual>
   </link>
+  <!-- TODO add end effector -->
 </robot>
 

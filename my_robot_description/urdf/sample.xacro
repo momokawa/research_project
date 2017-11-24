@@ -44,10 +44,12 @@
       <origin xyz="0 0 0.098" rpy="0 0 0" />
     </bracket_6>
 
-    <!-- 7 end_effector -->
-    <end_effector parent="bracket_6_link">
+    <!-- bracket_7 -->
+    <bracket_7 parent="bracket_6_link">
       <origin xyz="0 0 0.0915" rpy="0 0 0" />
-    </end_effector>
+    </bracket_7>
+
+    <!-- TODO add end effector -->
   </xacro:macro>
   
 
