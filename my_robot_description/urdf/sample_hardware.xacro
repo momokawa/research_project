@@ -17,7 +17,7 @@
     </joint>
     <link name="bracket_1_link">
       <visual>
-        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" />
+        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" /> <!-- need to roate model -->
         <geometry>
           <mesh filename="package://my_robot_description/meshes/bracket_1_simple.stl" scale="0.001 0.001 0.001"  />
         </geometry>
@@ -39,7 +39,7 @@
 
     <link name="bracket_2_link">
       <visual> <!-- FIXME change this to stl -->
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" /> <!-- need to rotate model -->
         <geometry>
           <mesh filename="package://my_robot_description/meshes/bracket_2.stl" scale="0.001 0.001 0.001"  />
         </geometry>
@@ -60,10 +60,11 @@
 
     <link name="bracket_3_link">
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" /> <!-- need to roate model -->
         <geometry>
           <mesh filename="package://my_robot_description/meshes/bracket_3.stl" scale="0.001 0.001 0.001"  />
         </geometry>
+        <material name="black" />
       </visual>
     </link>
   </xacro:macro>
@@ -80,7 +81,7 @@
     <link name="bracket_4_link">
       <!-- add collision -->
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" /> <!-- need to rotate model -->
         <geometry>
           <mesh filename="package://my_robot_description/meshes/bracket_4.stl" scale="0.001 0.001 0.001"  />
         </geometry>
@@ -100,10 +101,11 @@
     <link name="bracket_5_link">
       <!-- add collision and so on -->
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" /> <!-- need to rotate model -->
         <geometry>
           <mesh filename="package://my_robot_description/meshes/bracket_5.stl" scale="0.001 0.001 0.001"  />
         </geometry>
+        <material name="black" />
       </visual>
     </link>
   </xacro:macro>
@@ -118,7 +120,7 @@
 
     <link name="bracket_6_link">
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" /> <!-- need to roate model -->
         <geometry>
           <mesh filename="package://my_robot_description/meshes/bracket_6.stl" scale="0.001 0.001 0.001"  />
         </geometry>
@@ -137,10 +139,11 @@
 
     <link name="end_effector_link">
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- need to rotate model -->
         <geometry>
           <mesh filename="package://my_robot_description/meshes/bracket_7.stl" scale="0.001 0.001 0.001"  />
         </geometry>
+        <material name="black" />
       </visual>
     </link>
   </xacro:macro>

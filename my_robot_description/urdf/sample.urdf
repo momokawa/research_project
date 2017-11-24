@@ -28,6 +28,7 @@
   <link name="bracket_1_link">
     <visual>
       <origin rpy="0 -1.57079632679 0" xyz="0 0 0"/>
+      <!-- need to roate model -->
       <geometry>
         <mesh filename="package://my_robot_description/meshes/bracket_1_simple.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -45,7 +46,8 @@
   <link name="bracket_2_link">
     <visual>
       <!-- FIXME change this to stl -->
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 -1.57079632679 0" xyz="0 0 0"/>
+      <!-- need to rotate model -->
       <geometry>
         <mesh filename="package://my_robot_description/meshes/bracket_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -60,10 +62,12 @@
   </joint>
   <link name="bracket_3_link">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 -1.57079632679 0" xyz="0 0 0"/>
+      <!-- need to roate model -->
       <geometry>
         <mesh filename="package://my_robot_description/meshes/bracket_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="black"/>
     </visual>
   </link>
   <!-- add color and limis -->
@@ -76,7 +80,8 @@
   <link name="bracket_4_link">
     <!-- add collision -->
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 -1.57079632679 0" xyz="0 0 0"/>
+      <!-- need to rotate model -->
       <geometry>
         <mesh filename="package://my_robot_description/meshes/bracket_4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -90,10 +95,12 @@
   <link name="bracket_5_link">
     <!-- add collision and so on -->
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 -1.57079632679 0" xyz="0 0 0"/>
+      <!-- need to rotate model -->
       <geometry>
         <mesh filename="package://my_robot_description/meshes/bracket_5.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="black"/>
     </visual>
   </link>
   <joint name="bracket_5_6_joint" type="continuous">
@@ -103,7 +110,8 @@
   </joint>
   <link name="bracket_6_link">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 -1.57079632679 0" xyz="0 0 0"/>
+      <!-- need to roate model -->
       <geometry>
         <mesh filename="package://my_robot_description/meshes/bracket_6.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -117,10 +125,12 @@
   </joint>
   <link name="end_effector_link">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 1.57079632679 0" xyz="0 0 0"/>
+      <!-- need to rotate model -->
       <geometry>
         <mesh filename="package://my_robot_description/meshes/bracket_7.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="black"/>
     </visual>
   </link>
 </robot>
