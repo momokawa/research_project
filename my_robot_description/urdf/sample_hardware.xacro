@@ -4,7 +4,9 @@
 <!-- lowest level of xacro -->
 
 <!-- valiables to be used -->
-
+   <material name="black">
+      <color rgba="0.2 0.2 0.2 1.0" />
+   </material>
 <!-- FIXME add color -->
 <!-- bracket_1 -->
   <xacro:macro name="bracket_1" params="parent *origin">
@@ -15,10 +17,11 @@
     </joint>
     <link name="bracket_1_link">
       <visual>
-        <origin xyz="0 0 ${0.051/2}" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" />
         <geometry>
-          <cylinder radius="${0.112/2}" length="0.051" />
+          <mesh filename="package://my_robot_description/meshes/bracket_1_simple.stl" scale="0.001 0.001 0.001"  />
         </geometry>
+        <material name="black" />
       </visual>
       <!-- FIXME add collision and inetia -->
     </link>
@@ -38,7 +41,7 @@
       <visual> <!-- FIXME change this to stl -->
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <box size="0.065 ${0.0375*2} 0.160" />
+          <mesh filename="package://my_robot_description/meshes/bracket_2.stl" scale="0.001 0.001 0.001"  />
         </geometry>
         <!-- add collision and inertial -->
       </visual>
@@ -59,7 +62,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <box size="0.064 ${37.5*2/1000} 0.154" />
+          <mesh filename="package://my_robot_description/meshes/bracket_3.stl" scale="0.001 0.001 0.001"  />
         </geometry>
       </visual>
     </link>
@@ -77,9 +80,9 @@
     <link name="bracket_4_link">
       <!-- add collision -->
       <visual>
-        <origin xyz="0 0 ${0.044/2}" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <cylinder radius="${0.095/2}" length="0.044" />
+          <mesh filename="package://my_robot_description/meshes/bracket_4.stl" scale="0.001 0.001 0.001"  />
         </geometry>
       </visual>
     </link>
@@ -97,9 +100,9 @@
     <link name="bracket_5_link">
       <!-- add collision and so on -->
       <visual>
-        <origin xyz="${-1*(0.064/2)} 0 ${0.196/2 - 0.0615}" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <box size="0.064 0.093 0.196" />
+          <mesh filename="package://my_robot_description/meshes/bracket_5.stl" scale="0.001 0.001 0.001"  />
         </geometry>
       </visual>
     </link>
@@ -117,7 +120,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <box size="0.051 0.093 0.138" />
+          <mesh filename="package://my_robot_description/meshes/bracket_6.stl" scale="0.001 0.001 0.001"  />
         </geometry>
       </visual>
     </link>
@@ -136,7 +139,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <box size="0.093 0.093 0.031" />
+          <mesh filename="package://my_robot_description/meshes/bracket_7.stl" scale="0.001 0.001 0.001"  />
         </geometry>
       </visual>
     </link>

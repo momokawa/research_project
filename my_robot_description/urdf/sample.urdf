@@ -8,6 +8,9 @@
   <!-- defined num and set of link and joint -->
   <!-- lowest level of xacro -->
   <!-- valiables to be used -->
+  <material name="black">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
   <!-- link to provide the location reference for the arm -->
   <link name="base_link"/>
   <!-- 1. the first top link and joint -->
@@ -24,10 +27,11 @@
   </joint>
   <link name="bracket_1_link">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0.0255"/>
+      <origin rpy="0 -1.57079632679 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.051" radius="0.056"/>
+        <mesh filename="package://my_robot_description/meshes/bracket_1_simple.stl" scale="0.001 0.001 0.001"/>
       </geometry>
+      <material name="black"/>
     </visual>
     <!-- FIXME add collision and inetia -->
   </link>
@@ -43,7 +47,7 @@
       <!-- FIXME change this to stl -->
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.065 0.075 0.160"/>
+        <mesh filename="package://my_robot_description/meshes/bracket_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <!-- add collision and inertial -->
     </visual>
@@ -58,7 +62,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.064 0.075 0.154"/>
+        <mesh filename="package://my_robot_description/meshes/bracket_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
   </link>
@@ -72,9 +76,9 @@
   <link name="bracket_4_link">
     <!-- add collision -->
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0.022"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <cylinder length="0.044" radius="0.0475"/>
+        <mesh filename="package://my_robot_description/meshes/bracket_4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
   </link>
@@ -86,9 +90,9 @@
   <link name="bracket_5_link">
     <!-- add collision and so on -->
     <visual>
-      <origin rpy="0 0 0" xyz="-0.032 0 0.0365"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.064 0.093 0.196"/>
+        <mesh filename="package://my_robot_description/meshes/bracket_5.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
   </link>
@@ -101,7 +105,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.051 0.093 0.138"/>
+        <mesh filename="package://my_robot_description/meshes/bracket_6.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
   </link>
@@ -115,8 +119,9 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.093 0.093 0.031"/>
+        <mesh filename="package://my_robot_description/meshes/bracket_7.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </visual>
   </link>
 </robot>
+
