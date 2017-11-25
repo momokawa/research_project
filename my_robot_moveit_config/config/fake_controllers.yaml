@@ -6,4 +6,7 @@ controller_list:
       - bracket_3_4_joint
       - bracket_4_5_joint
       - bracket_5_6_joint
-      - bracket_7_joint
+      - bracketi_6_7_joint
+  - name: fake_end_effector_controller
+    joints:
+      []
