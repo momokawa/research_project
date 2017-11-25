@@ -18,17 +18,17 @@
     </joint>
     <link name="bracket_1_link">
       <visual>
-        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" /> <!-- need to roate model -->
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_1_simple.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_1_revoluted.stl" scale="0.001 0.001 0.001"  />
         </geometry>
         <material name="black" />
       </visual>
 
       <inertial>
         <mass value="1.702" /> <!-- kg Fe -->
-        <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- TODO check rpy -->
-        <inertia ixx="3.189E+06" ixy="3.570E-10" ixz="-1.566E-04" iyy="3.186E+06" iyz="7.140E-10" izz="3.186E+06" />
+        <origin xyz="0 0 0" rpy="0 0 0" /> 
+        <inertia ixx="3.186E+06" ixy="-3.570E-09" ixz="1.566E-04" iyy="3.186E+06" iyz="3.570E-10" izz="3.189E+06" />
       </inertial>
       
       <collision>
@@ -52,16 +52,16 @@
 
     <link name="bracket_2_link">
       <visual> <!-- FIXME change this to stl -->
-        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" /> <!-- need to rotate model -->
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_2.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_2_revoluted.stl" scale="0.001 0.001 0.001"  />
         </geometry>
       </visual>
 
       <inertial>
-        <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- TODO check whether it is correct to set rpy as it is -->
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <mass value="4.758" /> <!-- kg Fe --> <!-- TODO need to check -->
-        <inertia ixx="7.749E+06" ixy="6.590E+06" ixz="-0.022" iyy="3.000E+07" iyz="0.012" izz="3.161E+07" />
+        <inertia ixx="3.161E+07" ixy="-0.012" ixz="0.022" iyy="3.000E+07" iyz="6.590E+06" izz="7.749E+06" />
       </inertial>
 
       <collision>
@@ -75,7 +75,6 @@
   </xacro:macro>
 
 <!-- bracket_3 -->
-<!-- FIXME maybe will be deleted, when combining with brackets -->
   <xacro:macro name="bracket_3" params="parent *origin">
     <!-- FIXME add limit and ulimit vilimit -->
     <joint name="brackt_2_3_joint" type="continuous">
@@ -86,17 +85,17 @@
 
     <link name="bracket_3_link">
       <visual>
-        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" /> <!-- need to roate model -->
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_3.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_3_revoluted.stl" scale="0.001 0.001 0.001"  />
         </geometry>
         <material name="black" />
       </visual>
 
       <inertial>
         <mass value="3.912" /> <!-- kg Fe TODO need to check -->
-        <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- TODO check rpy -->
-        <inertia ixx="5.691E+06" ixy="-3.777E+05" ixz="-0.003" iyy="1.386E+07" iyz="-0.012" izz="1.537E+07" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <inertia ixx="1.537E+07" ixy="0.012" ixz="0.003" iyy="1.386E+07" iyz="-3.777E+05" izz="5.691E+06" />
       </inertial>
       
       <collision>
@@ -121,16 +120,16 @@
     <link name="bracket_4_link">
       
       <visual>
-        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" /> <!-- need to rotate model -->
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_4.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_4_revoluted.stl" scale="0.001 0.001 0.001"  />
         </geometry>
       </visual>
 
       <inertial>
         <mass value="3.912" /> <!-- kg Fe TODO need to check -->
-        <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- TODO check rpy -->
-        <inertia ixx="5.793E+06" ixy="6.157E+06" ixz="-0.021" iyy="2.487E+07" iyz="0.012" izz="2.648E+07" />
+        <origin xyz="0 0 0" rpy="0 0 0" /> 
+        <inertia ixx="2.648E+07" ixy="-0.012" ixz="0.021" iyy="2.487E+07" iyz="6.157E+06" izz="5.793E+06" />
       </inertial>
 
       <collision>
@@ -156,17 +155,17 @@
     <link name="bracket_5_link">
       
       <visual>
-        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" /> <!-- need to rotate model -->
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_5.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_5_revoluted.stl" scale="0.001 0.001 0.001"  />
         </geometry>
         <material name="black" />
       </visual>
 
       <inertial>
         <mass value="4.097" /> <!-- kg Fe TODO need to check -->
-        <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- TODO check rpy -->
-        <inertia ixx="5.810E+06" ixy="-3.746E+06" ixz="14.923" iyy="2.049E+07" iyz="15.891" izz="2.236E+07" />
+        <origin xyz="0 0 0" rpy="0 0 0" /> 
+        <inertia ixx="2.236E+07" ixy="-15.891" ixz="-14.923" iyy="2.049E+07" iyz="-3.746E+06" izz="5.810E+06" />
       </inertial>
 
       <collision>
@@ -190,16 +189,16 @@
 
     <link name="bracket_6_link">
       <visual>
-        <origin xyz="0 0 0" rpy="0 ${-1*pi/2} 0" /> <!-- need to roate model -->
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_6.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_6_revoluted.stl" scale="0.001 0.001 0.001"  />
         </geometry>
       </visual>
 
       <inertial>
         <mass value="2.888" /> <!-- kg Fe TODO check this -->
-        <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- TODO check rpy -->
-        <inertia ixx="3.340E+06" ixy="1.389E+05" ixz="0.002" iyy="1.076E+07" iyz="-0.009" izz="1.130E+07" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <inertia ixx="1.130E+07" ixy="0.009" ixz="-0.002" iyy="1.076E+07" iyz="1.389E+05" izz="3.340E+06" />
       </inertial>
 
       <collision>
@@ -224,17 +223,17 @@
 
     <link name="bracket_7_link">
       <visual>
-        <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- need to rotate model -->
+        <origin xyz="0 0 0" rpy="0 0 0" /> <!-- need to rotate model -->
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_7.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_7_revoluted.stl" scale="0.001 0.001 0.001"  />
         </geometry>
         <material name="black" />
       </visual>
 
       <inertial>
         <mass value="0.825" /> <!-- kg Fe TODO check this -->
-        <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- TODO check rpy -->
-        <inertia ixx="9.705E+05" ixy="-6.247E-10" ixz="2.064E-04" iyy="7.480E+05" iyz="3.570E-10" izz="7.480E+05" />
+        <origin xyz="0 0 0" rpy="0 0 0" /> 
+        <inertia ixx="7.480E+05" ixy="7.140E-10" ixz="9.655E-05" iyy="7.480E+05" iyz="0.00" izz="9.705E+05" />
       </inertial>
 
       <collision>
