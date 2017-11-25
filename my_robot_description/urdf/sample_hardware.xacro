@@ -30,8 +30,14 @@
         <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- TODO check rpy -->
         <inertia ixx="3.189E+06" ixy="3.570E-10" ixz="-1.566E-04" iyy="3.186E+06" iyz="7.140E-10" izz="3.186E+06" />
       </inertial>
-      <!-- TODO add collision -->
-	
+      
+      <collision>
+        <origin xyz="0 0 ${31/(2*1000)}" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="${45.5/1000}" length="${31/1000}" />
+        </geometry>
+      </collision>
+
     </link>
   </xacro:macro>
 
@@ -42,7 +48,6 @@
       <axis xyz="0 0 1" />
       <parent link="${parent}" />
       <child link="bracket_2_link"/>
-
     </joint>
 
     <link name="bracket_2_link">
@@ -51,7 +56,6 @@
         <geometry>
           <mesh filename="package://my_robot_description/meshes/bracket_2.stl" scale="0.001 0.001 0.001"  />
         </geometry>
-        <!-- add collision and inertial -->
       </visual>
 
       <inertial>
@@ -60,7 +64,12 @@
         <inertia ixx="7.749E+06" ixy="6.590E+06" ixz="-0.022" iyy="3.000E+07" iyz="0.012" izz="3.161E+07" />
       </inertial>
 
-      <!-- TODO add collision -->
+      <collision>
+        <origin xyz="0 0 ${0.160/2}" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="${0.1205/2}" length="0.160" />
+        </geometry>
+      </collision>
 
     </link>
   </xacro:macro>
@@ -89,8 +98,14 @@
         <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- TODO check rpy -->
         <inertia ixx="5.691E+06" ixy="-3.777E+05" ixz="-0.003" iyy="1.386E+07" iyz="-0.012" izz="1.537E+07" />
       </inertial>
+      
+      <collision>
+        <origin xyz="0 0 ${0.154/2}" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="${0.112/2}" length="0.154" />
+        </geometry>
+      </collision>
 
-      <!-- TODO add collision -->
     </link>
   </xacro:macro>
  
@@ -118,7 +133,13 @@
         <inertia ixx="5.793E+06" ixy="6.157E+06" ixz="-0.021" iyy="2.487E+07" iyz="0.012" izz="2.648E+07" />
       </inertial>
 
-      <!-- TODO add collision -->
+      <collision>
+        <origin xyz="0 0 ${0.153/2}" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="${0.112/2}" length="0.153" />
+        </geometry>
+      </collision>
+
 
     </link>
   </xacro:macro>
@@ -142,13 +163,19 @@
         <material name="black" />
       </visual>
 
-			<inertial>
+      <inertial>
         <mass value="4.097" /> <!-- kg Fe TODO need to check -->
         <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- TODO check rpy -->
         <inertia ixx="5.810E+06" ixy="-3.746E+06" ixz="14.923" iyy="2.049E+07" iyz="15.891" izz="2.236E+07" />
       </inertial>
 
-			<!-- TODO add collision -->
+      <collision>
+        <origin xyz="${-1*0.064/2} 0 ${0.192/2}" rpy="0 0 0" />
+        <geometry>
+          <box size="0.064 0.095 0.192" />
+        </geometry>
+      </collision>
+
 
     </link>
   </xacro:macro>
@@ -169,12 +196,19 @@
         </geometry>
       </visual>
 
-			<inertial>
+      <inertial>
         <mass value="2.888" /> <!-- kg Fe TODO check this -->
         <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- TODO check rpy -->
         <inertia ixx="3.340E+06" ixy="1.389E+05" ixz="0.002" iyy="1.076E+07" iyz="-0.009" izz="1.130E+07" />
       </inertial>
-			<!-- TODO add collision -->
+
+      <collision>
+        <origin xyz="0 0 ${0.138/2}" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="${0.0975/2}" length="0.138" />
+        </geometry>
+      </collision>
+
 
     </link>
   </xacro:macro>
@@ -197,12 +231,19 @@
         <material name="black" />
       </visual>
 
-			<inertial>
+      <inertial>
         <mass value="0.825" /> <!-- kg Fe TODO check this -->
         <origin xyz="0 0 0" rpy="0 ${pi/2} 0" /> <!-- TODO check rpy -->
         <inertia ixx="9.705E+05" ixy="-6.247E-10" ixz="2.064E-04" iyy="7.480E+05" iyz="3.570E-10" izz="7.480E+05" />
       </inertial>
-			<!-- TODO add collision -->
+
+      <collision>
+        <origin xyz="0 0 ${0.031/2}" rpy="0 0 0" />
+        <geometry>
+          <cylinder radius="${0.0465}" length="0.031" />
+        </geometry>
+      </collision>
+
 
     </link>
   </xacro:macro>

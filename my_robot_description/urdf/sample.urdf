@@ -43,7 +43,12 @@
       <!-- TODO check rpy -->
       <inertia ixx="3.189E+06" ixy="3.570E-10" ixz="-1.566E-04" iyy="3.186E+06" iyz="7.140E-10" izz="3.186E+06"/>
     </inertial>
-    <!-- TODO add collision -->
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.0155"/>
+      <geometry>
+        <cylinder length="0.031" radius="0.0455"/>
+      </geometry>
+    </collision>
   </link>
   <!-- FIXME add llimit ulimit vlimit -->
   <joint name="bracket_1_2_joint" type="continuous">
@@ -60,7 +65,6 @@
       <geometry>
         <mesh filename="package://my_robot_description/meshes/bracket_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <!-- add collision and inertial -->
     </visual>
     <inertial>
       <origin rpy="0 1.57079632679 0" xyz="0 0 0"/>
@@ -70,7 +74,12 @@
       <!-- TODO need to check -->
       <inertia ixx="7.749E+06" ixy="6.590E+06" ixz="-0.022" iyy="3.000E+07" iyz="0.012" izz="3.161E+07"/>
     </inertial>
-    <!-- TODO add collision -->
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.08"/>
+      <geometry>
+        <cylinder length="0.160" radius="0.06025"/>
+      </geometry>
+    </collision>
   </link>
   <!-- FIXME add limit and ulimit vilimit -->
   <joint name="brackt_2_3_joint" type="continuous">
@@ -94,7 +103,12 @@
       <!-- TODO check rpy -->
       <inertia ixx="5.691E+06" ixy="-3.777E+05" ixz="-0.003" iyy="1.386E+07" iyz="-0.012" izz="1.537E+07"/>
     </inertial>
-    <!-- TODO add collision -->
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.077"/>
+      <geometry>
+        <cylinder length="0.154" radius="0.056"/>
+      </geometry>
+    </collision>
   </link>
   <!-- add color and limis -->
   <joint name="bracket_3_4_joint" type="continuous">
@@ -118,7 +132,12 @@
       <!-- TODO check rpy -->
       <inertia ixx="5.793E+06" ixy="6.157E+06" ixz="-0.021" iyy="2.487E+07" iyz="0.012" izz="2.648E+07"/>
     </inertial>
-    <!-- TODO add collision -->
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.0765"/>
+      <geometry>
+        <cylinder length="0.153" radius="0.056"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="bracket_4_5_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0.1055"/>
@@ -141,7 +160,12 @@
       <!-- TODO check rpy -->
       <inertia ixx="5.810E+06" ixy="-3.746E+06" ixz="14.923" iyy="2.049E+07" iyz="15.891" izz="2.236E+07"/>
     </inertial>
-    <!-- TODO add collision -->
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.032 0 0.096"/>
+      <geometry>
+        <box size="0.064 0.095 0.192"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="bracket_5_6_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0.098"/>
@@ -163,7 +187,12 @@
       <!-- TODO check rpy -->
       <inertia ixx="3.340E+06" ixy="1.389E+05" ixz="0.002" iyy="1.076E+07" iyz="-0.009" izz="1.130E+07"/>
     </inertial>
-    <!-- TODO add collision -->
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.069"/>
+      <geometry>
+        <cylinder length="0.138" radius="0.04875"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="bracket_7_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0.0915"/>
@@ -187,7 +216,12 @@
       <!-- TODO check rpy -->
       <inertia ixx="9.705E+05" ixy="-6.247E-10" ixz="2.064E-04" iyy="7.480E+05" iyz="3.570E-10" izz="7.480E+05"/>
     </inertial>
-    <!-- TODO add collision -->
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0.0155"/>
+      <geometry>
+        <cylinder length="0.031" radius="0.0465"/>
+      </geometry>
+    </collision>
   </link>
   <!-- TODO add end effector -->
 </robot>
