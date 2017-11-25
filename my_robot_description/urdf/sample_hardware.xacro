@@ -20,7 +20,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_1_revoluted.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_1.stl" scale="0.001 0.001 0.001"  />
         </geometry>
         <material name="black" />
       </visual>
@@ -54,7 +54,7 @@
       <visual> <!-- FIXME change this to stl -->
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_2_revoluted.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_2.stl" scale="0.001 0.001 0.001"  />
         </geometry>
       </visual>
 
@@ -87,7 +87,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_3_revoluted.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_3.stl" scale="0.001 0.001 0.001"  />
         </geometry>
         <material name="black" />
       </visual>
@@ -122,7 +122,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_4_revoluted.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_4.stl" scale="0.001 0.001 0.001"  />
         </geometry>
       </visual>
 
@@ -157,7 +157,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_5_revoluted.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_5.stl" scale="0.001 0.001 0.001"  />
         </geometry>
         <material name="black" />
       </visual>
@@ -191,7 +191,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_6_revoluted.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_6.stl" scale="0.001 0.001 0.001"  />
         </geometry>
       </visual>
 
@@ -225,7 +225,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" /> <!-- need to rotate model -->
         <geometry>
-          <mesh filename="package://my_robot_description/meshes/bracket_7_revoluted.stl" scale="0.001 0.001 0.001"  />
+          <mesh filename="package://my_robot_description/meshes/bracket_7.stl" scale="0.001 0.001 0.001"  />
         </geometry>
         <material name="black" />
       </visual>
