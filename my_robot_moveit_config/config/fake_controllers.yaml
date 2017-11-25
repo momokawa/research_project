@@ -1,0 +1,9 @@
+controller_list:
+  - name: fake_arm_controller
+    joints:
+      - bracket_1_2_joint
+      - brackt_2_3_joint
+      - bracket_3_4_joint
+      - bracket_4_5_joint
+      - bracket_5_6_joint
+      - bracket_7_joint
