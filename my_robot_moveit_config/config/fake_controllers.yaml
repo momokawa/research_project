@@ -2,11 +2,11 @@ controller_list:
   - name: fake_arm_controller
     joints:
       - bracket_1_2_joint
-      - brackt_2_3_joint
+      - bracket_2_3_joint
       - bracket_3_4_joint
       - bracket_4_5_joint
       - bracket_5_6_joint
-      - bracketi_6_7_joint
+      - bracket_6_7_joint
   - name: fake_end_effector_controller
     joints:
       []

@@ -19,10 +19,10 @@
         <link name="bracket_7_link" />
         <joint name="bracket_0_1_joint" />
         <joint name="bracket_1_2_joint" />
-        <joint name="brackt_2_3_joint" />
         <joint name="bracket_3_4_joint" />
         <joint name="bracket_4_5_joint" />
         <joint name="bracket_5_6_joint" />
+        <joint name="bracket_6_7_joint" />
         <chain base_link="base_link" tip_link="bracket_7_link" />
     </group>
     <group name="end_effector">
@@ -35,7 +35,6 @@
         <joint name="bracket_3_4_joint" value="0" />
         <joint name="bracket_4_5_joint" value="0" />
         <joint name="bracket_5_6_joint" value="0" />
-        <joint name="brackt_2_3_joint" value="0" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="end_effector" parent_link="bracket_7_link" group="end_effector" />
