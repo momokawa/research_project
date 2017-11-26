@@ -79,6 +79,7 @@
     <!-- FIXME add limit and ulimit vilimit -->
     <joint name="bracket_2_3_joint" type="continuous">
       <xacro:insert_block name="origin" />
+      <axis xyz="0 1 0" />
       <parent link="${parent}" />
       <child link="bracket_3_link" />
     </joint>
@@ -148,6 +149,7 @@
   <xacro:macro name="bracket_5" params="parent *origin">
     <joint name="bracket_4_5_joint" type="continuous">
       <xacro:insert_block name="origin" />
+      <axis xyz="0 1 0" />
       <parent link="${parent}" />
       <child link="bracket_5_link" />
     </joint>
@@ -183,6 +185,7 @@
   <xacro:macro name="bracket_6" params="parent *origin">
     <joint name="bracket_5_6_joint" type="continuous">
       <xacro:insert_block name="origin" />
+      <axis xyz="0 1 0" />
       <parent link="${parent}"  />
       <child link="bracket_6_link" />
     </joint>

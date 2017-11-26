@@ -79,6 +79,7 @@
   <!-- FIXME add limit and ulimit vilimit -->
   <joint name="bracket_2_3_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0.1125"/>
+    <axis xyz="0 1 0"/>
     <parent link="bracket_2_link"/>
     <child link="bracket_3_link"/>
   </joint>
@@ -132,6 +133,7 @@
   </link>
   <joint name="bracket_4_5_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0.1055"/>
+    <axis xyz="0 1 0"/>
     <parent link="bracket_4_link"/>
     <child link="bracket_5_link"/>
   </joint>
@@ -158,6 +160,7 @@
   </link>
   <joint name="bracket_5_6_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0.098"/>
+    <axis xyz="0 1 0"/>
     <parent link="bracket_5_link"/>
     <child link="bracket_6_link"/>
   </joint>
