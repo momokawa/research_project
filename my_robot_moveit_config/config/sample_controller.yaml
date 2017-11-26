@@ -1,0 +1,13 @@
+controller_manager_ns: /
+controller_list:
+  - name: sample_robot_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+      - bracket_1_2_joint
+      - bracket_2_3_joint
+      - bracket_3_4_joint
+      - bracket_4_5_joint
+      - bracket_5_6_joint
+      - bracket_6_7_joint
+
