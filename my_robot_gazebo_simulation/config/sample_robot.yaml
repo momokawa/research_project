@@ -1,0 +1,10 @@
+sample_robot:
+  type: "position_controllers/JointTrajectoryController"
+  joints:
+    - bracket_1_2_joint
+    - bracket_2_3_joint
+    - bracket_3_4_joint
+    - bracket_4_5_joint
+    - bracket_5_6_joint
+    - bracket_6_7_joint
+

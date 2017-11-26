@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+
+<robot 
+  name="sample_robot"
+  xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!-- this xacro file is for parsing urdf file for simulating in gazebo -->
+
+  <!-- include sample_robot generator macro -->
+  <xacro:macro filename="$(find my_robot_description)/urdf/sample.xacro" />
+
+  <!-- TODO create my_robot.gazebo: gazebo-customization elements, such as color -->
+
+  <!-- TODO create my_robot_materials.xacro: for importing rviz colors -->
+
+  <!-- link to provide the location reference for the whole arm -->
+  <link name="base_link" />
+  <sample_robot parent="base_link">
+    <!-- arm model is fixed to the base_link -->
+    <origin xyz="0 0 0" />
+  </sample_robot>
+  
+  <!-- Add the transmission necessary to move the simulated robot's joints -->
+
+  <!-- TODO check the type of transmission, hardwareInterface and so on -->
+
+  <!-- First revolute servo -->
+  <transmission name="bracket_1_2_revolute">
+    <type>transmission_interface/SimpleTransimission</type>
+    <joint  name="bracket_1_2_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bracket_1_2_revolute_servo">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <!-- Second revolute servo -->
+  <transmission name="bracket_2_3_revolute">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bracket_2_3_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bracket_2_3_revolute_servo">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- 3. revolute servo -->
+  <transmission name="bracket_3_4_revolute">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bracket_3_4_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bracket_3_4_revolute_servo">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- 4. revolute servo -->
+  <transmission name="bracket_4_5_revolute">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bracket_4_5_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bracket_4_5_revolute_servo">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <!-- 5. revolute servo -->
+  <transmission name="bracket_5_6_revolute">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bracket_5_6_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bracket_5_6_revolute_servo">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <!-- 6. revolute servo -->
+  <transmission name="bracket_6_7_revolute">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bracket_6_7_joint">
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="bracket_6_7_revolute_servo">
+      <hardwareInterface>PositionJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+ 
+  <!-- add the gazebo_ros_control plugin -->
+  <!-- this is needed for parsing the transmission tag and loads the appropriate hardware interfaces and controler manager -->
+  <!-- TODO need to check this is correct way to install gazebo plugins -->
+
+  <gazebo>
+    <plugin name="control" filename="libgazebo_ros_control.so"/>
+    <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+      <jointName>
+        bracket_1_2_joint,
+        bracket_2_3_joint,
+        bracket_3_4_joint,
+        bracket_4_5_joint,
+        bracket_5_6_joint,
+        bracket_6_7_joint
+      </jointName>
+    </plugin>
+  </gazebo>
+
+</robot>
