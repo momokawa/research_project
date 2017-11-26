@@ -13,4 +13,7 @@
   <node name="controller_spawner" pkg="controller_manager"
       type="spawner" args="sample_robot_controller" />
 
+  <!-- add robot_state_publisher, which will do forward kinematics on the joint_states messages and robot model to produce tf messages -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" 
+    type="robot_state_publisher" />
 </launch>
