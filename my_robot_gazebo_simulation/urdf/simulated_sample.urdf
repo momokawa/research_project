@@ -19,7 +19,7 @@
   <!-- 1. the first top link and joint -->
   <link name="sample_robot_mounting_link"/>
   <joint name="sample_robot_mounting_joint" type="fixed">
-    <origin xyz="0 0 0"/>
+    <origin rpy="0 3.14159265359 0" xyz="0 0 0"/>
     <parent link="base_link"/>
     <child link="sample_robot_mounting_link"/>
   </joint>
