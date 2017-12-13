@@ -1,0 +1,2 @@
+rostopic pub /sample_robot_controller/command trajectory_msgs/JointTrajectory '{joint_names:["bracket_1_2_joint", "bracket_2_3_joint", "bracket_3_4_joint", "bracket_4_5_joint", "bracket_5_6_joint", "bracket_6_7_joint"], points: [{positions: [0.1, 1.5, 0, 0, 0, 0], time_from_start: [1.0, 0.0]}]}' -1
+
