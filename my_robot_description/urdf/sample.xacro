@@ -3,6 +3,18 @@
   <!-- second top urdf -->
   <!-- include other file -->
   <xacro:include filename="$(find my_robot_description)/urdf/sample_hardware.xacro" />  
+  
+  <!-- sample_robot_foundation description -->
+  <xacro:macro name="sample_robot_foundation" params="parent *origin">
+    <sample_robot_foundation_1 parent="${parent}">
+      <xacro:insert_block name="origin" />
+    </sample_robot_foundation_1>
+
+    <sample_robot_foundation_2 parent="sample_robot_foundation_1_link">
+      <origin xyz="-0.058 0 0.35" rpy="0 0 0" />
+    </sample_robot_foundation_2>
+
+  </xacro:macro>
 
   <!-- sample_robot description -->
   <xacro:macro name="sample_robot" params="parent *origin">
