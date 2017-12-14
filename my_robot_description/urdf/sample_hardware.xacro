@@ -51,22 +51,22 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <box size="0.120 0.120 0.004" />
+          <box size="0.240 0.120 0.004" />
         </geometry>
       </visual>
 
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <box size="0.120 0.120 0.004" />
+          <box size="0.240 0.120 0.004" />
         </geometry>
       </collision>
 
       <inertial>
         <mass value="1.0" /> <!-- This is just temporary value -->
         <origin xyz="0 0 0" rpy="0 0 0" />
-	<!-- <inertia ixx="${(0.004*0.004+0.12*0.12)/12}" ixy="0" ixz="0" iyy=" ${(0.004*0.004+0.12*0.12)/12}" iyz="0" izz="${(0.120*0.12+0.120*0.12)/12}" /> -->
-	<inertia ixx="0.00120133" ixy="0" ixz="0" iyy="0.00120133" iyz="0" izz="2.4E-3" />
+	<!-- <inertia ixx="${(0.004*0.004+0.12*0.12)/12}" ixy="0" ixz="0" iyy=" ${(0.004*0.004+0.24*0.24)/12}" iyz="0" izz="${(0.24*0.24+0.120*0.12)/12}" /> -->
+	<inertia ixx="0.00120133" ixy="0" ixz="0" iyy="4.80133E-3" iyz="0" izz="6.0E-3" />
       </inertial>
     </link>
   </xacro:macro>

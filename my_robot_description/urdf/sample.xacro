@@ -11,7 +11,7 @@
     </sample_robot_foundation_1>
 
     <sample_robot_foundation_2 parent="sample_robot_foundation_1_link">
-      <origin xyz="-0.058 0 ${0.35+0.004/2}" rpy="0 0 0" />
+      <origin xyz="${0.24/2-0.004/2} 0 ${0.35+0.004/2}" rpy="0 0 0" />
     </sample_robot_foundation_2>
   </xacro:macro>
 
