@@ -41,7 +41,7 @@
     </inertial>
   </link>
   <joint name="foundation_1_2_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="-0.058 0 0.35"/>
+    <origin rpy="0 0 0" xyz="-0.058 0 0.352"/>
     <parent link="sample_robot_foundation_1_link"/>
     <child link="sample_robot_foundation_2_link"/>
   </joint>
