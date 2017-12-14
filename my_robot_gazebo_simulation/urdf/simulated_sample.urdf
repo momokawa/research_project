@@ -11,16 +11,69 @@
   <material name="black">
     <color rgba="0.2 0.2 0.2 1.0"/>
   </material>
-  <!-- FIXME add color -->
   <!-- TODO create my_robot.gazebo: gazebo-customization elements, such as color -->
   <!-- TODO create my_robot_materials.xacro: for importing rviz colors -->
+  <!-- TODO foundation is temporary added -->
   <!-- link to provide the location reference for the whole arm -->
   <link name="base_link"/>
+  <joint name="base_link_foundation_1_joint" type="fixed">
+    <origin xyz="0 0 0.35"/>
+    <parent link="base_link"/>
+    <child link="sample_robot_foundation_1_link"/>
+  </joint>
+  <link name="sample_robot_foundation_1_link">
+    <!-- pysical values of foundations are not fixed -->
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.004 0.120 0.7"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.004 0.120 0.7"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <!-- This is just temporary value -->
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <!-- <inertia ixx="${(0.7*0.7+0.12*0.12)/12}" ixy="0" ixz="0" iyy=" ${(0.004*0.004+0.7*0.7)/12}" iyz="0" izz="${(0.004*0.004+0.120*0.120)/12}"/> -->
+      <inertia ixx="0.04203" ixy="0" ixz="0" iyy="0.04083467" iyz="0" izz="0.00120133"/>
+    </inertial>
+  </link>
+  <joint name="foundation_1_2_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.058 0 0.352"/>
+    <parent link="sample_robot_foundation_1_link"/>
+    <child link="sample_robot_foundation_2_link"/>
+  </joint>
+  <link name="sample_robot_foundation_2_link">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.120 0.120 0.004"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.120 0.120 0.004"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <!-- This is just temporary value -->
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <!-- <inertia ixx="${(0.004*0.004+0.12*0.12)/12}" ixy="0" ixz="0" iyy=" ${(0.004*0.004+0.12*0.12)/12}" iyz="0" izz="${(0.120*0.12+0.120*0.12)/12}" /> -->
+      <inertia ixx="0.00120133" ixy="0" ixz="0" iyy="0.00120133" iyz="0" izz="2.4E-3"/>
+    </inertial>
+  </link>
   <!-- 1. the first top link and joint -->
   <link name="sample_robot_mounting_link"/>
   <joint name="sample_robot_mounting_joint" type="fixed">
     <origin rpy="0 3.14159265359 0" xyz="0 0 0"/>
-    <parent link="base_link"/>
+    <parent link="sample_robot_foundation_2_link"/>
     <child link="sample_robot_mounting_link"/>
   </joint>
   <joint name="bracket_0_1_joint" type="fixed">
@@ -37,10 +90,10 @@
       <material name="black"/>
     </visual>
     <inertial>
-      <mass value="1.702"/>
-      <!-- kg Fe -->
+      <mass value="0.609588"/>
+      <!-- kg Al 7505 -->
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="3.186E+06" ixy="-3.570E-09" ixz="1.566E-04" iyy="3.186E+06" iyz="3.570E-10" izz="3.189E+06"/>
+      <inertia ixx="1.140E+06" ixy="-1.278E-09" ixz="5.604E-05" iyy="1.140E+06" iyz="1.278E-10" izz="1.142E+06"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.0155"/>
@@ -49,7 +102,7 @@
       </geometry>
     </collision>
   </link>
-  <!-- FIXME add llimit ulimit vlimit -->
+  <!-- TODO add llimit ulimit vlimit -->
   <joint name="bracket_1_2_joint" type="continuous">
     <origin rpy="0 0 0" xyz="0 0 0.051"/>
     <axis xyz="0 0 1"/>
@@ -58,7 +111,6 @@
   </joint>
   <link name="bracket_2_link">
     <visual>
-      <!-- FIXME change this to stl -->
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://my_robot_description/meshes/bracket_2.stl" scale="0.001 0.001 0.001"/>
@@ -66,10 +118,9 @@
     </visual>
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <mass value="4.758"/>
-      <!-- kg Fe -->
-      <!-- TODO need to check -->
-      <inertia ixx="3.161E+07" ixy="-0.012" ixz="0.022" iyy="3.000E+07" iyz="6.590E+06" izz="7.749E+06"/>
+      <mass value="1.703374"/>
+      <!-- kg Al -->
+      <inertia ixx="1.131E+07" ixy="-0.004" ixz="0.008" iyy="1.074E+07" iyz="2.359E+06" izz="2.774E+06"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.08"/>
@@ -94,10 +145,10 @@
       <material name="black"/>
     </visual>
     <inertial>
-      <mass value="3.912"/>
-      <!-- kg Fe TODO need to check -->
+      <mass value="1.400547"/>
+      <!-- kg Al -->
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="1.537E+07" ixy="0.012" ixz="0.003" iyy="1.386E+07" iyz="-3.777E+05" izz="5.691E+06"/>
+      <inertia ixx="5.501E+06" ixy="0.004" ixz="9.410E-04" iyy="4.963E+06" iyz="-1.352E+05" izz="2.037E+06"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.077"/>
@@ -121,10 +172,10 @@
       </geometry>
     </visual>
     <inertial>
-      <mass value="3.912"/>
-      <!-- kg Fe TODO need to check -->
+      <mass value="1.400547"/>
+      <!-- kg Al -->
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="2.648E+07" ixy="-0.012" ixz="0.021" iyy="2.487E+07" iyz="6.157E+06" izz="5.793E+06"/>
+      <inertia ixx="9.477E+06" ixy="-0.004" ixz="0.008" iyy="8.903E+06" iyz="2.204E+06" izz="2.074E+06"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.0765"/>
@@ -148,10 +199,10 @@
       <material name="black"/>
     </visual>
     <inertial>
-      <mass value="4.097"/>
-      <!-- kg Fe TODO need to check -->
+      <mass value="1.466917"/>
+      <!-- kg Al -->
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="2.236E+07" ixy="-15.891" ixz="-14.923" iyy="2.049E+07" iyz="-3.746E+06" izz="5.810E+06"/>
+      <inertia ixx="8.003E+06" ixy="-5.689" ixz="-5.342" iyy="7.336E+06" iyz="-1.341E+06" izz="2.080E+06"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="-0.032 0 0.096"/>
@@ -174,10 +225,10 @@
       </geometry>
     </visual>
     <inertial>
-      <mass value="2.888"/>
+      <mass value="1.033966"/>
       <!-- kg Fe TODO check this -->
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="1.130E+07" ixy="0.009" ixz="-0.002" iyy="1.076E+07" iyz="1.389E+05" izz="3.340E+06"/>
+      <inertia ixx="4.047E+06" ixy="0.003" ixz="-8.494E-04" iyy="3.853E+06" iyz="4.974E+04" izz="1.196E+06"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.069"/>
@@ -202,10 +253,10 @@
       <material name="black"/>
     </visual>
     <inertial>
-      <mass value="0.825"/>
+      <mass value="0.29527"/>
       <!-- kg Fe TODO check this -->
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="7.480E+05" ixy="7.140E-10" ixz="9.655E-05" iyy="7.480E+05" iyz="0.00" izz="9.705E+05"/>
+      <inertia ixx="2.678E+05" ixy="2.556E-10" ixz="3.456E-05" iyy="2.678E+05" iyz="0.00" izz="3.474E+05"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.0155"/>
@@ -227,10 +278,10 @@
       </geometry>
     </visual>
     <inertial>
-      <mass value="0.733"/>
+      <mass value="0.26231"/>
       <!-- kg Fe TODO check this -->
       <origin rpy="0 0 0" xyz="0 0 0"/>
-      <inertia ixx="5.794E+05" ixy="-1825.742" ixz="5189.318" iyy="9.352E+05" iyz="2261.065" izz="7.247E+05"/>
+      <inertia ixx="2.074E+05" ixy="-653.546" ixz="1857.577" iyy="3.348E+05" iyz="809.375" izz="2.594E+05"/>
     </inertial>
     <collision>
       <origin rpy="0 0 0" xyz="0.0475 0.027 0.02975"/>
