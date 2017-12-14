@@ -16,15 +16,30 @@
       <child link="sample_robot_foundation_1_link" />
     </joint>
     <link name="sample_robot_foundation_1_link">
+	<!-- pysical values of foundations are not fixed -->
      <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
          <box size="0.004 0.120 0.7" />
         </geometry>
-     </visual>
+      </visual>
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+         <box size="0.004 0.120 0.7" />
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass value="1.0" /> <!-- This is just temporary value -->
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <!-- <inertia ixx="${(0.7*0.7+0.12*0.12)/12}" ixy="0" ixz="0" iyy=" ${(0.004*0.004+0.7*0.7)/12}" iyz="0" izz="${(0.004*0.004+0.120*0.120)/12}"/> -->
+	<inertia ixx="0.04203" ixy="0" ixz="0" iyy="0.04083467" iyz="0" izz="0.00120133" />
+      </inertial>
     </link>
+  
   </xacro:macro>
-  <!-- TODO inertial and collision -->
   <!-- sample_robot_foundation_2 -->
   <xacro:macro name="sample_robot_foundation_2" params="parent *origin">
     <joint name="foundation_1_2_joint" type="fixed">
@@ -37,10 +52,22 @@
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
           <box size="0.120 0.120 0.004" />
-          <origin xyz="0 0 0.002" rpy="0 0 0" />
         </geometry>
       </visual>
-      <!-- TODO inertial and collision -->
+
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <box size="0.120 0.120 0.004" />
+        </geometry>
+      </collision>
+
+      <inertial>
+        <mass value="1.0" /> <!-- This is just temporary value -->
+        <origin xyz="0 0 0" rpy="0 0 0" />
+	<!-- <inertia ixx="${(0.004*0.004+0.12*0.12)/12}" ixy="0" ixz="0" iyy=" ${(0.004*0.004+0.12*0.12)/12}" iyz="0" izz="${(0.120*0.12+0.120*0.12)/12}" /> -->
+	<inertia ixx="0.00120133" ixy="0" ixz="0" iyy="0.00120133" iyz="0" izz="2.4E-3" />
+      </inertial>
     </link>
   </xacro:macro>
 
