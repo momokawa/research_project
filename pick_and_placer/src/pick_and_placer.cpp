@@ -2,7 +2,7 @@
 #include <moveit/move_group_interface/move_group_interface.h>
 
 int main(int argc, char **argv) {
-  ros::init(argc, argv, "pick_and_placer_pick_and_placer");
+  ros::init(argc, argv, "pick_and_placer");
   ros::NodeHandle nh;
 
   // for moveit's async calc
@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
 
   moveit::planning_interface::MoveGroupInterface arm("arm"); // set moveGroupInterface as arm ( this comes from moveit_setup_assistant)
   arm.setPoseReferenceFrame("base_link");
-  arm.setNamedTarget("resting"); // set the arm "vertical" pose
+  arm.setNamedTarget("vertical"); // set the arm "vertical" pose
   arm.move();
 
   ros::shutdown();
