@@ -2,7 +2,7 @@
 
 version: kinetic
 
-<<<<<<< HEAD
+
 ## To launch demo,
 
 > roslaunch my_robot_moveit_config all_in_one_moveit_gazebo.launch
@@ -11,17 +11,16 @@ version: kinetic
 
 > roslaunch moveit_setup_assistant setup_assistant.launch
 
+do not include sample_robot_moveit_controller_manager.launch.xml when updating.
+
 ## Just to see the model in Rviz, run this
 
 > roslaunch urdf_tutorial display.launch model:=sample.urdf
-=======
-TO launch demo, 
 
-> roslaunch my_robot_moveit_config all_in_one_moveit_gazebo.launch
+## To test pick_and_placer
 
-Everytime you update urdf model, you need to redo
+> roslaunch my_robot_gazebo_simulation demo_gazebo.launch
 
-> roslaunch moveit_setup_assistant setup_assistant.launch
+> roslaunch my_robot_moveit_config move_group.launch 
 
->>>>>>> 47a1ebca2956b555c1641a345170bdc535fbfd5f
-
+> rosrun pick_and_placer pick_and_placer 
