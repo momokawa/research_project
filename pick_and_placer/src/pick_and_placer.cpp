@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
 
   moveit::planning_interface::MoveGroupInterface arm("arm"); // set moveGroupInterface as arm ( this comes from moveit_setup_assistant)
   arm.setPoseReferenceFrame("base_link");
-  arm.setNamedTarget("vertical"); // set the arm "vertical" pose
+  arm.setNamedTarget("resting"); // set the arm "vertical" pose
   arm.move();
 
   ros::shutdown();
