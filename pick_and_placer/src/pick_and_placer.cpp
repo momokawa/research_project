@@ -9,6 +9,7 @@ int main(int argc, char **argv) {
   ros::AsyncSpinner spinner(2); // use 2 threads
   spinner.start();
 
+  ROS_INFO("Moving to resitng angle");
   moveit::planning_interface::MoveGroupInterface arm("arm"); // set moveGroupInterface as arm ( this comes from moveit_setup_assistant)
   arm.setPoseReferenceFrame("base_link");
   
