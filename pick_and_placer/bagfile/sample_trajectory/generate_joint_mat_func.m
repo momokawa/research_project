@@ -10,9 +10,9 @@ joint_position_array = table2array(joint_position_table); % convert table to arr
 
 % create mat file with required structs
 joint_position_trajectory.time = time_array';
-joint_position_trajectory.values = joint_position_array;
-joint_position_trajectory.dimension = 1;
-joint_position_trajectory.label = 'joint_position';
+joint_position_trajectory.signals.values = joint_position_array;
+joint_position_trajectory.signals.dimensions = 1;
+joint_position_trajectory.signals.label = 'joint_position';
 save(mat_filename, 'joint_position_trajectory');
 
 end
