@@ -1,5 +1,6 @@
 % -----
 % this file creates mat file of each joint for using torque calculation
+% import function from generate_join_mat_func.m
 % -----
 
 generate_joint_mat_func('bracket_1_2_joint.mat', 11);
