@@ -7,7 +7,7 @@
   <!-- sample_robot_foundation description -->
   <xacro:macro name="sample_robot_foundation" params="parent *origin">
     <sample_robot_foundation_1 parent="sample_robot_foundation_2_link">
-      <origin xyz="${0.24/2+0.004/2} 0 ${0.004/2 - 0.7/2}" rpy="0 0 0" />
+      <origin xyz="${1.0/2+0.004/2} 0 ${0.004/2 - 0.7/2}" rpy="0 0 0" />
     </sample_robot_foundation_1>
 
     <sample_robot_foundation_2 parent="${parent}">

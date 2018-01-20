@@ -17,7 +17,7 @@
   <!-- link to provide the location reference for the whole arm -->
   <link name="base_link"/>
   <joint name="base_link_foundation_1_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.122 0 -0.348"/>
+    <origin rpy="0 0 0" xyz="0.502 0 -0.348"/>
     <parent link="sample_robot_foundation_2_link"/>
     <child link="sample_robot_foundation_1_link"/>
   </joint>
@@ -52,13 +52,13 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.240 0.120 0.004"/>
+        <box size="1.0 0.120 0.004"/>
       </geometry>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <box size="0.240 0.120 0.004"/>
+        <box size="1.0 0.120 0.004"/>
       </geometry>
     </collision>
     <inertial>

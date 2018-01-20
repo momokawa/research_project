@@ -7,7 +7,7 @@
    <material name="black">
       <color rgba="0.2 0.2 0.2 1.0" />
    </material>
-<!--TODO add color --> 
+
 <!-- sample_robot_foundation_1 -->
   <xacro:macro name="sample_robot_foundation_1" params="parent *origin">
     <joint name="base_link_foundation_1_joint" type="fixed">
@@ -40,6 +40,7 @@
     </link>
   
   </xacro:macro>
+
   <!-- sample_robot_foundation_2 -->
   <xacro:macro name="sample_robot_foundation_2" params="parent *origin">
     <joint name="foundation_1_2_joint" type="fixed">
@@ -51,14 +52,14 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <box size="0.240 0.120 0.004" />
+          <box size="1.0 0.120 0.004" />
         </geometry>
       </visual>
 
       <collision>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <box size="0.240 0.120 0.004" />
+          <box size="1.0 0.120 0.004" />
         </geometry>
       </collision>
 
