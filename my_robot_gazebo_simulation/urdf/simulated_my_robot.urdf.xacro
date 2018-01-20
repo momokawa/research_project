@@ -18,10 +18,10 @@
   <link name="base_link" />
 
   <sample_robot_foundation parent="base_link">
-    <origin xyz="0 0 0.35" />
+    <origin xyz="0 0 0" />
   </sample_robot_foundation>
 
-  <sample_robot parent="sample_robot_foundation_2_link">
+  <sample_robot parent="base_link">
     <!-- arm model is fixed to the base_link -->
     <origin xyz="0 0 0" rpy="0 ${pi} 0" />
   </sample_robot>
