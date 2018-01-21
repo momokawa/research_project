@@ -1,5 +1,8 @@
 #include <ros/ros.h>
 #include <moveit/move_group_interface/move_group_interface.h>
+#include <iostream>
+
+using namespace std;
 
 int main(int argc, char **argv) {
   ros::init(argc, argv, "pick_and_placer");
@@ -11,18 +14,22 @@ int main(int argc, char **argv) {
 
   moveit::planning_interface::MoveGroupInterface arm("arm"); // set moveGroupInterface as arm ( this comes from moveit_setup_assistant)
   arm.setPoseReferenceFrame("base_link");
-	
+  
+  // arm.setGoalPositionTolerance(0.1);	
 
+  // print current pose
+  geometry_msgs::PoseStamped current_pose = arm.getCurrentPose();
+  cout << current_pose << endl;
   // start pose
   geometry_msgs::PoseStamped start_pose;
   start_pose.header.frame_id = "base_link";
-  start_pose.pose.position.x = -0.425; 
+  start_pose.pose.position.x = -0.3; 
   start_pose.pose.position.y = 0.1;
-  start_pose.pose.position.z = -0.5;
+  start_pose.pose.position.z = -0.3;
   start_pose.pose.orientation.x = 0.0;
-  start_pose.pose.orientation.y = 0.707106;
+  start_pose.pose.orientation.y = 0.0;
   start_pose.pose.orientation.z = 0.0;
-  start_pose.pose.orientation.w = 0.707106; // use quanternion
+  start_pose.pose.orientation.w = 1.0; // use quanternion
 
   // goal pose
   geometry_msgs::PoseStamped goal_pose;
