@@ -23,13 +23,13 @@ int main(int argc, char **argv) {
   // start pose
   geometry_msgs::PoseStamped start_pose;
   start_pose.header.frame_id = "base_link";
-  start_pose.pose.position.x = -0.3; 
-  start_pose.pose.position.y = 0.1;
-  start_pose.pose.position.z = -0.3;
-  start_pose.pose.orientation.x = 0.0;
-  start_pose.pose.orientation.y = 0.0;
-  start_pose.pose.orientation.z = 0.0;
-  start_pose.pose.orientation.w = 1.0; // use quanternion
+  start_pose.pose.position.x = -0.289; 
+  start_pose.pose.position.y = -0.089;
+  start_pose.pose.position.z = -0.2826;
+  start_pose.pose.orientation.x = 0.275455;
+  start_pose.pose.orientation.y = -0.933449;
+  start_pose.pose.orientation.z = -0.142808;
+  start_pose.pose.orientation.w = 0.180007; // use quanternion
 
   // goal pose
   geometry_msgs::PoseStamped goal_pose;
