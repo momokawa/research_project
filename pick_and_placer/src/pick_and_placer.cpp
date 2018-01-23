@@ -23,13 +23,14 @@ int main(int argc, char **argv) {
   // start pose
   geometry_msgs::PoseStamped start_pose;
   start_pose.header.frame_id = "base_link";
-  start_pose.pose.position.x = -0.289; 
-  start_pose.pose.position.y = -0.089;
-  start_pose.pose.position.z = -0.2826;
+  start_pose.pose.position.x = -0.300; 
+  start_pose.pose.position.y = 0.10;
+  start_pose.pose.position.z = -0.375;
   start_pose.pose.orientation.x = 0.275455;
   start_pose.pose.orientation.y = -0.933449;
   start_pose.pose.orientation.z = -0.142808;
   start_pose.pose.orientation.w = 0.180007; // use quanternion
+	// notice: quantenion requires enough significant digit, so [0 1 0 0] cannot be used.
 
   // goal pose
   geometry_msgs::PoseStamped goal_pose;
@@ -37,21 +38,25 @@ int main(int argc, char **argv) {
   goal_pose.pose.position.x = -0.06; 
   goal_pose.pose.position.y = 0.30;
   goal_pose.pose.position.z = -0.375;
-  goal_pose.pose.orientation.x = 0.0;
-  goal_pose.pose.orientation.y = 0.707106;
-  goal_pose.pose.orientation.z = 0.0;
-  goal_pose.pose.orientation.w = 0.707106; // use quanternion
+  goal_pose.pose.orientation.x = 0.275455;
+  goal_pose.pose.orientation.y = -0.933449;
+  goal_pose.pose.orientation.z = -0.142808;
+  goal_pose.pose.orientation.w = 0.180007; // use quanternion
 
   ROS_INFO("Moving to prepose pose");
 	arm.setPoseTarget(start_pose); // move to prepare
+	arm.setGoalTolerance(0.01);
   if ( !arm.move() ) {
   	ROS_WARN("Could not move to prepare pose");
   	return 1;	
 	}
-  
+
+  // show current pose
+	cout << arm.getCurrentPose() << endl;
   // move to goal pose
   ROS_INFO("Moving to goal pose");
   arm.setPoseTarget(goal_pose);
+	arm.setGoalTolerance(0.01);
   if ( !arm.move() ){
     ROS_WARN("Coudl not move to goal pose");
     return 1;
