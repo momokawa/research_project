@@ -1,0 +1,9 @@
+<launch>
+<!-- occur erro when run this :( -->
+<!-- move to start -->
+	<node pkg="pick_and_placer" name="move_to_start" type="move_to_start" />
+
+<!-- move manipulator to specified position -->
+	<node pkg="pick_and_placer" name="pick_and_placer_test" type="pick_and_placer" />
+
+</launch>
