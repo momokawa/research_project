@@ -222,19 +222,25 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/servo_control_node.cpp)
 add_executable(${PROJECT_NAME}_pick_and_placer src/pick_and_placer.cpp)
+add_executable(${PROJECT_NAME}_move_to_start src/move_to_start.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
 ## e.g. "rosrun someones_pkg node" instead of "rosrun someones_pkg someones_pkg_node"
 set_target_properties(${PROJECT_NAME}_pick_and_placer PROPERTIES OUTPUT_NAME pick_and_placer PREFIX "")
-
+set_target_properties(${PROJECT_NAME}_move_to_start PROPERTIES OUTPUT_NAME move_to_start PREFIX "")
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 add_dependencies(${PROJECT_NAME}_pick_and_placer ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(${PROJECT_NAME}_move_to_start ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(${PROJECT_NAME}_pick_and_placer
+  ${catkin_LIBRARIES}
+  ${Boost_LIBRARIES}
+)
+target_link_libraries(${PROJECT_NAME}_move_to_start
   ${catkin_LIBRARIES}
   ${Boost_LIBRARIES}
 )
