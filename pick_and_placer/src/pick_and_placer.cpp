@@ -15,16 +15,14 @@ int main(int argc, char **argv) {
   moveit::planning_interface::MoveGroupInterface arm("arm"); // set moveGroupInterface as arm ( this comes from moveit_setup_assistant)
   arm.setPoseReferenceFrame("base_link");
   
-  // arm.setGoalPositionTolerance(0.1);	
-
   // print current pose
   geometry_msgs::PoseStamped current_pose = arm.getCurrentPose();
   cout << current_pose << endl;
-
+  
   // goal pose
   geometry_msgs::PoseStamped goal_pose;
   goal_pose.header.frame_id = "base_link";
-  goal_pose.pose.position.x = -0.06; 
+  goal_pose.pose.position.x = 0.04; 
   goal_pose.pose.position.y = 0.30;
   goal_pose.pose.position.z = -0.375;
   goal_pose.pose.orientation.x = 0.275455;
@@ -35,9 +33,10 @@ int main(int argc, char **argv) {
   // move to goal pose
   ROS_INFO("Moving to goal pose");
   arm.setPoseTarget(goal_pose);
-  arm.setGoalTolerance(0.01);
+  arm.setGoalPositionTolerance(0.01);
+  arm.setGoalOrientationTolerance(0.05);
   if ( !arm.move() ){
-    ROS_WARN("Coudl not move to goal pose");
+    ROS_WARN("Coudn't not move to goal pose");
     return 1;
   }
   
