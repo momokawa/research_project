@@ -16,9 +16,7 @@ int main(int argc, char **argv) {
   arm.setPoseReferenceFrame("base_link");
   
   // print current pose
-  geometry_msgs::PoseStamped current_pose = arm.getCurrentPose();
-  cout << current_pose << endl;
-  
+  ROS_INFO_STREAM("Current States" << arm.getCurrentPose() ); 
   // goal pose
   geometry_msgs::PoseStamped goal_pose;
   goal_pose.header.frame_id = "base_link";
@@ -33,13 +31,14 @@ int main(int argc, char **argv) {
   // move to goal pose
   ROS_INFO("Moving to goal pose");
   arm.setPoseTarget(goal_pose);
-  arm.setGoalPositionTolerance(0.01);
-  arm.setGoalOrientationTolerance(0.05);
+  arm.setGoalPositionTolerance(0.015);
+  arm.setGoalOrientationTolerance(0.06);
   if ( !arm.move() ){
     ROS_WARN("Coudn't not move to goal pose");
     return 1;
   }
   
+  ROS_INFO_STREAM("Current States" << arm.getCurrentPose() ); 
   ros::shutdown();
   return 0;
 }
