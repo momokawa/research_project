@@ -376,56 +376,38 @@
         bracket_6_7_joint
       </jointName>
     </plugin>
+    <!-- Add force/torque sensor to each joint -->
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+      <updateRate>100.0</updateRate>
+      <topicName>ft_sensor_topic_1_2_joint</topicName>
+      <jointName>bracket_1_2_joint</jointName>
+    </plugin>
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+      <updateRate>100.0</updateRate>
+      <topicName>ft_sensor_topic_2_3_joint</topicName>
+      <jointName>bracket_2_3_joint</jointName>
+    </plugin>
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+      <updateRate>100.0</updateRate>
+      <topicName>ft_sensor_topic_3_4_joint</topicName>
+      <jointName>bracket_3_4_joint</jointName>
+    </plugin>
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+      <updateRate>100.0</updateRate>
+      <topicName>ft_sensor_topic_4_5_joint</topicName>
+      <jointName>bracket_4_5_joint</jointName>
+    </plugin>
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+      <updateRate>100.0</updateRate>
+      <topicName>ft_sensor_topic_5_6_joint</topicName>
+      <jointName>bracket_5_6_joint</jointName>
+    </plugin>
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+      <updateRate>100.0</updateRate>
+      <topicName>ft_sensor_topic_6_7_joint</topicName>
+      <jointName>bracket_6_7_joint</jointName>
+    </plugin>
   </gazebo>
   <!-- Add sensors for joints -->
-  <gazebo reference="bracket_1_2_joint">
-    <sensor name="force_torque" type="force_torque">
-      <update_rate>100</update_rate>
-      <visualize>true</visualize>
-      <always_on>true</always_on>
-    </sensor>
-  </gazebo>
-  <gazebo reference="bracket_1_2_joint">
-    <sensor name="force_torque" type="force_torque">
-      <update_rate>100</update_rate>
-      <visualize>true</visualize>
-      <always_on>true</always_on>
-    </sensor>
-  </gazebo>
-  <gazebo reference="bracket_2_3_joint">
-    <sensor name="force_torque" type="force_torque">
-      <update_rate>100</update_rate>
-      <visualize>true</visualize>
-      <always_on>true</always_on>
-    </sensor>
-  </gazebo>
-  <gazebo reference="bracket_3_4_joint">
-    <sensor name="force_torque" type="force_torque">
-      <update_rate>100</update_rate>
-      <visualize>true</visualize>
-      <always_on>true</always_on>
-    </sensor>
-  </gazebo>
-  <gazebo reference="bracket_4_5_joint">
-    <sensor name="force_torque" type="force_torque">
-      <update_rate>100</update_rate>
-      <visualize>true</visualize>
-      <always_on>true</always_on>
-    </sensor>
-  </gazebo>
-  <gazebo reference="bracket_5_6_joint">
-    <sensor name="force_torque" type="force_torque">
-      <update_rate>100</update_rate>
-      <visualize>true</visualize>
-      <always_on>true</always_on>
-    </sensor>
-  </gazebo>
-  <gazebo reference="bracket_6_7_joint">
-    <sensor name="force_torque" type="force_torque">
-      <update_rate>100</update_rate>
-      <visualize>true</visualize>
-      <always_on>true</always_on>
-    </sensor>
-  </gazebo>
 </robot>
 
