@@ -361,6 +361,7 @@
   <!-- add the gazebo_ros_control plugin -->
   <!-- this is needed for parsing the transmission tag and loads the appropriate hardware interfaces and controler manager -->
   <!-- TODO need to check this is correct way to install gazebo plugins -->
+  <!-- plug in for whole robot -->
   <gazebo>
     <!-- plugin for add ros_control -->
     <plugin filename="libgazebo_ros_control.so" name="control"/>
@@ -375,6 +376,56 @@
         bracket_6_7_joint
       </jointName>
     </plugin>
+  </gazebo>
+  <!-- Add sensors for joints -->
+  <gazebo reference="bracket_1_2_joint">
+    <sensor name="force_torque" type="force_torque">
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <always_on>true</always_on>
+    </sensor>
+  </gazebo>
+  <gazebo reference="bracket_1_2_joint">
+    <sensor name="force_torque" type="force_torque">
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <always_on>true</always_on>
+    </sensor>
+  </gazebo>
+  <gazebo reference="bracket_2_3_joint">
+    <sensor name="force_torque" type="force_torque">
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <always_on>true</always_on>
+    </sensor>
+  </gazebo>
+  <gazebo reference="bracket_3_4_joint">
+    <sensor name="force_torque" type="force_torque">
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <always_on>true</always_on>
+    </sensor>
+  </gazebo>
+  <gazebo reference="bracket_4_5_joint">
+    <sensor name="force_torque" type="force_torque">
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <always_on>true</always_on>
+    </sensor>
+  </gazebo>
+  <gazebo reference="bracket_5_6_joint">
+    <sensor name="force_torque" type="force_torque">
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <always_on>true</always_on>
+    </sensor>
+  </gazebo>
+  <gazebo reference="bracket_6_7_joint">
+    <sensor name="force_torque" type="force_torque">
+      <update_rate>100</update_rate>
+      <visualize>true</visualize>
+      <always_on>true</always_on>
+    </sensor>
   </gazebo>
 </robot>
 
