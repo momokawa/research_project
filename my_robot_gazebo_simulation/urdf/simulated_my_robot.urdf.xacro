@@ -125,7 +125,7 @@
     </plugin>
 
 		<!-- Add force/torque sensor to each joint -->
-
+		
 		<plugin name="ft_sensor" filename="libgazebo_ros_ft_sensor.so">
 			<updateRate>100.0</updateRate>
 			<topicName>ft_sensor_topic_1_2_joint</topicName>
