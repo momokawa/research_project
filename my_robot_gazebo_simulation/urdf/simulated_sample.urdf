@@ -361,6 +361,25 @@
   <!-- add the gazebo_ros_control plugin -->
   <!-- this is needed for parsing the transmission tag and loads the appropriate hardware interfaces and controler manager -->
   <!-- TODO need to check this is correct way to install gazebo plugins -->
+  <!-- Enable the joint feedback for each joint -->
+  <gazebo reference="bracket_1_2_joint">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo reference="bracket_2_3_joint">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo reference="bracket_3_4_joint">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo reference="bracket_4_5_joint">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo reference="bracket_5_6_joint">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
+  <gazebo reference="bracket_6_7_joint">
+    <provideFeedback>true</provideFeedback>
+  </gazebo>
   <!-- plug in for whole robot -->
   <gazebo>
     <!-- plugin for add ros_control -->
@@ -378,37 +397,36 @@
       </jointName>
     </plugin>
     <!-- Add force/torque sensor to each joint -->
-    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor1">
       <updateRate>100.0</updateRate>
       <topicName>ft_sensor_topic_1_2_joint</topicName>
       <jointName>bracket_1_2_joint</jointName>
     </plugin>
-    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor2">
       <updateRate>100.0</updateRate>
       <topicName>ft_sensor_topic_2_3_joint</topicName>
       <jointName>bracket_2_3_joint</jointName>
     </plugin>
-    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor3">
       <updateRate>100.0</updateRate>
       <topicName>ft_sensor_topic_3_4_joint</topicName>
       <jointName>bracket_3_4_joint</jointName>
     </plugin>
-    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor4">
       <updateRate>100.0</updateRate>
       <topicName>ft_sensor_topic_4_5_joint</topicName>
       <jointName>bracket_4_5_joint</jointName>
     </plugin>
-    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor5">
       <updateRate>100.0</updateRate>
       <topicName>ft_sensor_topic_5_6_joint</topicName>
       <jointName>bracket_5_6_joint</jointName>
     </plugin>
-    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor">
+    <plugin filename="libgazebo_ros_ft_sensor.so" name="ft_sensor6">
       <updateRate>100.0</updateRate>
       <topicName>ft_sensor_topic_6_7_joint</topicName>
       <jointName>bracket_6_7_joint</jointName>
     </plugin>
   </gazebo>
-  <!-- Add sensors for joints -->
 </robot>
 
