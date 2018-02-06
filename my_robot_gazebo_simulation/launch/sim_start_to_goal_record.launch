@@ -3,6 +3,6 @@
   <node name="goal_trajectory" pkg="pick_and_placer" type="pick_and_placer" output="screen" />
 
   <!-- Add record -->
-  <node name="record_joint_tf_topics" pkg="rosbag" type="record" args="-o $(find my_robot_gazebo_simulation)/rosbag /ft_sensor_topic_1_2_joint /ft_sensor_topic_2_3_joint /ft_sensor_topic_3_4_joint /ft_sensor_topic_4_5_joint /ft_sensor_topic_5_6_joint /ft_sensor_topic_6_7_joint" output="screen"  />
+  <node name="record_joint_tf_topics" pkg="rosbag" type="record" args="-o '$(find my_robot_gazebo_simulation)/rosbag' /ft_sensor_topic_1_2_joint /ft_sensor_topic_2_3_joint /ft_sensor_topic_3_4_joint /ft_sensor_topic_4_5_joint /ft_sensor_topic_5_6_joint /ft_sensor_topic_6_7_joint" output="screen"  />
 
 </launch>
